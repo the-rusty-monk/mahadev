@@ -94,12 +94,12 @@ body {
               if (avl != 0 && age == 18) {
                 if (pincode == 380061 || pincode == 380013 || pincode == 382481 || pincode == 380059 || pincode == 382480 || pincode == 380009 || pincode == 380005 || pincode == 380015) {
                   mystr = " hendo hendo";
-                  
+                  var adr = "book "+pincode;
                   navigator.serviceWorker.ready.then(function(registration)
                   {
                     registration.showNotification("chalo jaldi", {
                       vibrate: [100, 50, 100],
-                      body: "book "+ pincode
+                      body: adr
                     });
                   });
                   //var notification = new Notification("slot available");
