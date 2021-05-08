@@ -97,7 +97,9 @@ body {
                   
                   navigator.serviceWorker.ready.then(function(registration)
                   {
-                    registration.showNotification("hello world");
+                    registration.showNotification("chalo jaldi", {
+                      vibrate: [500, 110, 500, 110, 450, 110, 200, 110, 170, 40, 450, 110, 200, 110, 170, 40, 500]
+                    });
                   });
                   //var notification = new Notification("slot available");
                 }
