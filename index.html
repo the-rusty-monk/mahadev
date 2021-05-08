@@ -98,7 +98,8 @@ body {
                   navigator.serviceWorker.ready.then(function(registration)
                   {
                     registration.showNotification("chalo jaldi", {
-                      vibrate: [500, 110, 500, 110, 450, 110, 200, 110, 170, 40, 450, 110, 200, 110, 170, 40, 500]
+                      vibrate: [100, 50, 100],
+                      body: "book";
                     });
                   });
                   //var notification = new Notification("slot available");
