@@ -62,6 +62,7 @@ body {
     window.gwd = window.gwd || {};
     gwd.checkslots = function(event) {
       //hello
+      document.getElementById("label_1").innerHTML = "bas tare";
       navigator.serviceWorker.register("sw.js");
       // Let's check if the browser supports notifications
       if (!("Notification" in window)) {
@@ -105,7 +106,7 @@ body {
                   //var notification = new Notification("slot available");
                 }
               } else {
-                mystr = "nathi bapa";
+                mystr = "atyare nathi hu check karto rais dar 5 seconde bas khali aa tab close na karta, minimize chalse";
               }
             }
           }
@@ -134,7 +135,7 @@ body {
 
 <body class="htmlNoPages">
   <button id="button_1" class="gwd-button-16fg">check</button>
-  <label id="label_1" class="gwd-label-abil">aek minute kau tamne</label>
+  <label id="label_1" class="gwd-label-abil">aa button dabavo</label>
   <label id="label_2" class="gwd-label-is1i">Mahadev Mahadev</label>
 
 
