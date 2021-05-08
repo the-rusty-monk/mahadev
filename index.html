@@ -63,6 +63,7 @@ body {
     gwd.checkslots = function(event) {
       //hello
       document.getElementById("label_1").innerHTML = "bas tare";
+      document.getElementById("button_1").style.display="none";
       navigator.serviceWorker.register("sw.js");
       // Let's check if the browser supports notifications
       if (!("Notification" in window)) {
