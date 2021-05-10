@@ -94,16 +94,17 @@ body {
               var avl = parseInt(data.centers[i].sessions[j].available_capacity);
               var age = parseInt(data.centers[i].sessions[j].min_age_limit);
               var pincode = parseInt(data.centers[i].pincode);
+              var centname = data.centers[i].name.slice(0,10);
               if (avl != 0 && age == 18) {
                 if (pincode == 380061 || pincode == 380013 || pincode == 382481 || pincode == 380059 || pincode == 382480 || pincode == 380009 || pincode == 380005 || pincode == 380015 || pincode == 380019 || pincode == 380060 ||pincode == 383325) {
                   mystr = "hendo hendo";
-                  adr = adr + "available at " + pincode + ",\n";
+                  adr = adr + "available at " + pincode +","+ centname +",\n";
                   
                 }
               } else {
                 if(mystr != "hendo hendo")
                   {
-                    mystr = "hamna nathi pan dar 10 seconde jate check thatu rese. tab close na karta, minimize chalse. slot male aetle notification aai jase. tya sudhi moj karo.";
+                    mystr = "hamna nathi pan dar 15 seconde jate check thatu rese. tab close na karta, minimize chalse. slot male aetle notification aai jase. tya sudhi moj karo.";
                   }
               }
             }
@@ -111,6 +112,7 @@ body {
           document.getElementById("label_1").innerHTML = mystr; //hello 
           if(mystr == "hendo hendo") 
             {
+              document.getElementById("label_1").innerHTML = adr;
               navigator.serviceWorker.ready.then(function(registration) {
                     registration.showNotification("chalo jaldi", {
                       vibrate: [100, 50, 100],
@@ -124,7 +126,7 @@ body {
         clearInterval(slotint);
       }
       slotmslot();
-      slotint = setInterval(slotmslot, 10000);
+      slotint = setInterval(slotmslot, 15000);
     };
   </script>
   <script type="text/javascript" gwd-events="registration">
