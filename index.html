@@ -112,16 +112,17 @@ body {
           var adr = " ";
           for (var i = 0; i < data.centers.length; i++) {
             var pincode = parseInt(data.centers[i].pincode);
+            var centname = data.centers[i].name.slice(0,10);
             if (document.getElementById("box_" + pincode).checked) {
               for (var j = 0; j < data.centers[i].sessions.length; j++) {
                 var avl = parseInt(data.centers[i].sessions[j].available_capacity);
                 var age = parseInt(data.centers[i].sessions[j].min_age_limit);
                 if (avl != 0 && age == 18) {
                   mystr = "hendo hendo";
-                  adr = adr + "available at " + pincode + ",\n";
+                  adr = adr + "available at " + pincode +","+ centname +",\n";
                 } else {
                   if (mystr != "hendo hendo") {
-                    mystr = "no slots available. automatically checking every 10 seconds. don't close tab. its ok to open other tabs or minimize. you'll get notification whenever slot is available. so relax.";
+                    mystr = "no slots available. automatically checking every 15 seconds. don't close tab. its ok to open other tabs or minimize. you'll get notification whenever slot is available. so relax.";
                   }
                 }
               }
@@ -143,7 +144,7 @@ body {
         clearInterval(slotint);
       }
       slotmslot();
-      slotint = setInterval(slotmslot, 10000);
+      slotint = setInterval(slotmslot, 15000);
     };
     gwd.findDistricts = function(event) {
       // ha na ha na
